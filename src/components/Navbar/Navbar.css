@@ -1,0 +1,29 @@
+.navContainer{
+
+}
+
+ul{
+    list-style-type: none;
+    display: flex;
+    justify-content:space-around;
+}
+
+
+
+.navbarLink{
+    border: none; /* Remove borders */
+    color: white; /* Add a text color */
+    padding: 14px 28px; /* Add some padding */
+    cursor: pointer; /* Add a pointer cursor on mouse-over */
+    border-radius: 12px;
+    width:150px;
+    text-decoration: none;
+    font-size: 16px;
+    margin-bottom: 50px;
+}
+
+.navbarLink {background-color: #064375;} /* Blue */
+.navbarLink:hover {
+    background: #0b7dda;
+    opacity: 30%;
+}
