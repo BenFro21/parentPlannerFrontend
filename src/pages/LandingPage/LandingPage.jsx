@@ -4,7 +4,7 @@ import axios from 'axios';
 const backendUrl = 'http://localhost:8080/api/v1/user'
 
 const LandingPage = () => {
-const [user, setUser] = useState('')
+// const [user, setUser] = useState('')
 const [email, setEmail] = useState('');
 const [password, setPassword] = useState('');
 const [confirmPassword, setConfirmPassword] = useState('');
@@ -30,9 +30,9 @@ const handleLoginSubmit = (e) => {
   e.preventDefault()
   axios.post(`${backendUrl}/login`, {email, password})
   .then(res => {
-    console.log(res.data[2])
-    setUser(res.data[2])
-    console.log(user)
+    console.log(res.data)
+    localStorage.setItem('user', res.data)
+
   })
   .catch(err => console.log(err))
   console.log("finished login")
