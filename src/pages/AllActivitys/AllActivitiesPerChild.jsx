@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 
 const backendUrl = 'http://localhost:8080/api/v1/activity'
@@ -18,8 +18,12 @@ const AllActivitiesPerChild = () => {
 
 
 
+
   return (
     <div>
+
+        <button> <Link to={`/activities/add/${childId}`}> Add Activity</Link> </button>
+
         {activities?.map(activity => {
             return(
                 <section>

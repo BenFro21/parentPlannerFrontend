@@ -18,16 +18,21 @@ useEffect(() => {
 }, [])
 
 
+
+
   return (
     <div>
-      <button>Add Child</button>
+      <button ><Link to={`/child/add`}>Add Child</Link></button>
       <section className='childSection'>
         {children?.map(child => {
           return(
             <div>
               <h3> {child?.name}</h3>
               <button><Link to={`/activities/${child?.id}`}>View Activities</Link></button>
-              <button>Delete Child </button>
+              <button onClick={(e) => {
+                axios.delete(`${backendUrl}/${child.id}`)
+                .then(window.location.reload())
+              }}>Delete Child </button>
             </div>
           )
         })}
