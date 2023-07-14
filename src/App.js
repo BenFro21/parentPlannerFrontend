@@ -6,18 +6,22 @@ import ShowAllChildren from './pages/ShowAllChildren/ShowAllChildren';
 import AllActivitiesPerChild from './pages/AllActivitys/AllActivitiesPerChild';
 import AddChild from './pages/AddChild/AddChild';
 import AddActivity from './pages/AddActivity/AddActivity';
+import { useState } from 'react';
 
 
 
 function App() {
- 
+const [user, setUser] = useState('')
+
+
+
 
 
   return (
     <div className="App">
-      <Layout >
+      <Layout user={user} setUser={setUser} >
         <Routes>
-          <Route path='/' element={<LandingPage />} />
+          <Route path='/' element={user[0] == 15 ? <ShowAllChildren /> : <LandingPage user={user} setUser={setUser} />} />
           <Route path='/children' element={<ShowAllChildren />} /> 
           <Route path='/activities/:childId' element={<AllActivitiesPerChild />} />
           <Route path='/child/add' element={<AddChild />} />

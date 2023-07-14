@@ -3,10 +3,10 @@ import Navbar from '../Navbar/Navbar'
 
 import './Layout.css'
 
-const Layout = ({children}) => {
+const Layout = ({children, user, setUser}) => {
   return (
     <div>
-      <Navbar /> 
+      <Navbar user={user} setUser={setUser} /> 
       {children}
  
 </div>
