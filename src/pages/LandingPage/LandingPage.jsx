@@ -57,40 +57,45 @@ const handleRegisterSubmit = (e) => {
 
 
   return (
-    <div>
-      <section className='formSection'>
-      <h3 className='formTitle'>Login</h3>
-      <form className='login'>
-        <label htmlFor='email' className='formLabel'>Email</label>
-        <input type='email' id='email' value={email} onChange={handleEmailChange} />
+    <div className='container-sm'>
+        <div className='row'>
+          <div className='col-xl-6'>
+          <h3 className='formTitle'>Login</h3>
+          <form className='login'>
+          <label htmlFor='email' className='formLabel'>Email</label>
+          <input class="form-control form-control"  type='email' id='email' value={email} onChange={handleEmailChange} />
 
-        <label htmlFor='password' className='formLabel'>Password</label>
-        <input type='password' id='password' value={password} onChange={handlePasswordChange} />
+          <label htmlFor='password' className='formLabel'>Password</label>
+          <input class="form-control form-control"  type='password' id='password' value={password} onChange={handlePasswordChange} />
         
-        <button className='submitBtn' type='submit' onClick={handleLoginSubmit}>Submit</button>
-      </form>
-
+          <button type="button" class="btn btn-outline-success" onClick={handleLoginSubmit}>Login</button>
+          </form>
+       
+          
       <h3 className='formTitle'>Register</h3>
       <form className='register'>
         <label htmlFor='email' className='formLabel'>Email</label>
-        <input className='formInput' type='email' id='email' value={email} onChange={handleEmailChange} />
+        <input class="form-control form-control"  type='email' id='email' value={email} onChange={handleEmailChange} />
 
         <label htmlFor='username' className='formLabel'>Username</label>
-        <input className='formInput' type='text' id='username' value={username} onChange={handleUsernameChange} />
+        <input class="form-control form-control"  type='text' id='username' value={username} onChange={handleUsernameChange} />
 
         <label htmlFor='password' className='formLabel'>Password</label>
-        <input className='formInput' type='password' id='password' value={password} onChange={handlePasswordChange} />
+        <input class="form-control form-control"  type='password' id='password' value={password} onChange={handlePasswordChange} />
 
         <label htmlFor='confirmPassword' className='formLabel'>Confirm Password</label>
-        <input className='formInput' type='password' id='confirmPassword' value={confirmPassword} onChange={handleConfirmPasswordChange} />
+        <input class="form-control form-control"  type='password' id='confirmPassword' value={confirmPassword} onChange={handleConfirmPasswordChange} />
         
-        <button className='submitBtn' type='submit' onClick={handleRegisterSubmit}>Submit</button>
+        <button type="button" class="btn btn-outline-success" onClick={handleRegisterSubmit}>Register</button>
       </form>
-      </section>
-      <section className='infoSection'>
-        <h1 className='infoTitle'>Parent Planner app</h1>
-        <p className='infoP'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta suscipit dolorem perspiciatis molestiae voluptatibus magni sit, iusto nesciunt odio, reprehenderit, laborum quod vitae optio vero perferendis. Dolorem alias suscipit quo. Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore id numquam aliquam. Ducimus quas voluptatibus iste? Exercitationem ea iusto iure, saepe voluptatum quod ipsum, dolor pariatur necessitatibus, voluptate officia id.</p>
-      </section>
+      </div>
+  
+      <div className='col-xl-6'>
+        <h1>Parent Planner app</h1>
+        <p>Welcome to the parent planner app! A one stop shop to manage all of your childrens activities and events. Please register an account and sign in to start. Once logged in you can add children and activities for said child. Delete the activity when it is completed and add new ones when needed! Please Enjoy!</p>
+        <img src='https://previews.123rf.com/images/viyada123rf/viyada123rf1810/viyada123rf181000029/146620426-family-fun-at-home-father-mother-son-and-daughter-are-playing-together-happily-kite-surfing.jpg' alt='family playing' className='img-fluid'></img>      
+      </div>
+      </div>
     </div>
   )
 }

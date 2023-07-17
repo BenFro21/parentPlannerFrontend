@@ -11,21 +11,22 @@ const AddChild = () => {
 
     const handleNameChange = (e) => {
         setChildName(e.target.value)
+        console.log(e.target.value)
     }
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post(`${backendUrl}/user/1`)
+        axios.post(`${backendUrl}/user/1`, {childName})
         .then(res  => console.log(res))
         .catch(err => console.log(err))
-        navigate('/children', {replace: true} )
+        navigate('/children')
     }
 
   return (
     <div>
         <form>
-            <label className='addChildLabel' htmlFor='name'>Child's Name:</label>
-            <input type='text' value={childName} id='name' onChange={handleNameChange} /> 
+            <label className='addChildLabel' htmlFor='childName'>Child's Name:</label>
+            <input type='text' value={childName} id='childName' onChange={handleNameChange} /> 
 
             <button type='submit' onClick={handleSubmit} >Submit</button>
         </form>
