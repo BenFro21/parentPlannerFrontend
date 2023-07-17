@@ -7,28 +7,29 @@ const backendUrl = 'http://localhost:8080/api/v1/child'
 
 const AddChild = () => {
     const navigate = useNavigate();
-    const [childName, setChildName] = useState('');
+    const [name, setName] = useState('');
 
     const handleNameChange = (e) => {
-        setChildName(e.target.value)
+        setName(e.target.value)
         console.log(e.target.value)
     }
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post(`${backendUrl}/user/1`, {childName})
+        axios.post(`${backendUrl}/user/1`, {name})
         .then(res  => console.log(res))
         .catch(err => console.log(err))
         navigate('/children')
+        window.location.reload()
     }
 
   return (
     <div>
-        <form>
-            <label className='addChildLabel' htmlFor='childName'>Child's Name:</label>
-            <input type='text' value={childName} id='childName' onChange={handleNameChange} /> 
+        <form onSubmit={handleSubmit}>
+            <label className='addChildLabel' htmlFor='name'>Child's Name:</label>
+            <input type='text' value={name} id='name' onChange={handleNameChange} /> 
 
-            <button type='submit' onClick={handleSubmit} >Submit</button>
+            <button type='submit'>Submit</button>
         </form>
     </div>
   )

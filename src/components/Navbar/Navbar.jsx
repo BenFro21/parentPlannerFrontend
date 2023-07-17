@@ -3,17 +3,17 @@ import './Navbar.css'
 import {Link} from 'react-router-dom'
 
 const Navbar = ({user, setUser}) => {
-  const logout = () => {
-    setUser("0")
-  }
+
 
   return (
     <ul>
-    <Link className='navbarLink' to='/'>IDK</Link>
+
     <Link  className='navbarLink' to='/children'>Children</Link>
-    {/* <button onClick={() => logout}>logout</button> */}
+    <Link className='navbarLink' to='/child/add'>Add Child</Link>
+   
 </ul>
   )
 }
 
 export default Navbar
+

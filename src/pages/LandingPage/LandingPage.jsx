@@ -30,8 +30,8 @@ const handleLoginSubmit = (e) => {
   e.preventDefault()
   axios.post(`${backendUrl}/login`, {email, password})
   .then(res => {
-    // console.log(res.data)
-    // localStorage.setItem('user', res.data)
+    console.log(res.data)
+    localStorage.setItem('user', res.data)
     setUser(res.data[0])
     console.log(user)
   })
