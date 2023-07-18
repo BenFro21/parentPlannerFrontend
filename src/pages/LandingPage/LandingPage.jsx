@@ -68,7 +68,7 @@ const handleRegisterSubmit = (e) => {
           <label htmlFor='password' className='formLabel'>Password</label>
           <input class="form-control form-control"  type='password' id='password' value={password} onChange={handlePasswordChange} />
         
-          <button type="button" class="btn btn-outline-success" onClick={handleLoginSubmit}>Login</button>
+          <button type="button" className="btn btn-lg btn-success mb-3" onClick={handleLoginSubmit}>Login</button>
           </form>
        
           
@@ -86,13 +86,13 @@ const handleRegisterSubmit = (e) => {
         <label htmlFor='confirmPassword' className='formLabel'>Confirm Password</label>
         <input class="form-control form-control"  type='password' id='confirmPassword' value={confirmPassword} onChange={handleConfirmPasswordChange} />
         
-        <button type="button" class="btn btn-outline-success" onClick={handleRegisterSubmit}>Register</button>
+        <button type="button" className="btn btn-lg btn-success mb-3" onClick={handleRegisterSubmit}>Register</button>
       </form>
       </div>
   
       <div className='col-xl-6'>
         <h1>Parent Planner app</h1>
-        <p>Welcome to the parent planner app! A one stop shop to manage all of your childrens activities and events. Please register an account and sign in to start. Once logged in you can add children and activities for said child. Delete the activity when it is completed and add new ones when needed! Please Enjoy!</p>
+        <p>Welcome to the parent planner app! A one stop shop to manage all of your children’s activities and events. Please register an account and sign in to start. Once logged in you can add children and activities for said child. Delete the activity when it is completed and add new ones when needed! Please Enjoy!</p>
         <img src='https://previews.123rf.com/images/viyada123rf/viyada123rf1810/viyada123rf181000029/146620426-family-fun-at-home-father-mother-son-and-daughter-are-playing-together-happily-kite-surfing.jpg' alt='family playing' className='img-fluid'></img>      
       </div>
       </div>

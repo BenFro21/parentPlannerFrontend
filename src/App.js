@@ -7,6 +7,7 @@ import AllActivitiesPerChild from './pages/AllActivitys/AllActivitiesPerChild';
 import AddChild from './pages/AddChild/AddChild';
 import AddActivity from './pages/AddActivity/AddActivity';
 import { useState } from 'react';
+import UpdateActivity from './pages/UpdateActivity/UpdateActivity';
 
 
 
@@ -26,6 +27,7 @@ const [user, setUser] = useState('')
           <Route path='/activities/:childId' element={<AllActivitiesPerChild />} />
           <Route path='/child/add' element={<AddChild />} />
           <Route path='/activities/add/:childId' element={<AddActivity />} />
+          <Route path='/activities/update/:activityId' element={<UpdateActivity />} />
 
       
         </Routes>

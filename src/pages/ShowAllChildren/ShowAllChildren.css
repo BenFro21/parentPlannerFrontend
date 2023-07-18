@@ -1,0 +1,26 @@
+.childSection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .child {
+    width: 18rem;
+  }
+  
+  .child .card-body {
+    background-image: url("https://static.vecteezy.com/system/resources/thumbnails/002/021/807/original/cartoon-animated-clouds-in-the-sky-free-video.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .child .card-title {
+    color: black;
+    font-size: 36px;
+    text-decoration: underline;
+  }
+  
+  .child .btn {
+    margin-top: 10px;
+  }
+  

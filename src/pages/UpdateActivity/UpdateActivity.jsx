@@ -1,15 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 
-const backendUrl = 'http://localhost:8080/api/v1/activity/child';
+const backendUrl = 'http://localhost:8080/api/v1/activity';
 
-const AddActivity = () => {
+const UpdateActivity = () => {
   const navigate = useNavigate();
-  const { childId } = useParams();
+  const {activityId} = useParams();
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [startDate, setStartDate] = useState('');
+  const [aId, setAId] = useState()
+  const [childId, setChildId] = useState(1);
+
+  useEffect(() => {
+    axios
+      .get(`${backendUrl}/${activityId}`)
+      .then(res => {
+        const activity = res.data;
+        setTitle(activity.title);
+        setDescription(activity.description);
+        setStartDate(activity.startDate);
+        setAId(activityId)
+        setChildId(1)
+        console.log(activityId)
+        console.log(childId)
+      })
+      .catch(err => console.log(err));
+  }, []);
 
   const handleDescriptionChange = e => {
     setDescription(e.target.value);
@@ -23,14 +41,25 @@ const AddActivity = () => {
     setStartDate(e.target.value);
   };
 
+  const id = activityId;
   const handleSubmit = e => {
     e.preventDefault();
+    console.log(title, description)
     axios
-      .post(`${backendUrl}/${childId}`, { title, description, startDate })
-      .then(res => console.log(res))
-      .catch(err => console.log(err));
-    navigate(`/activities/${childId}`, { replace: true });
-    console.log(typeof startDate);
+      .put(`${backendUrl}/${activityId}`, {id, title, description, startDate })
+      .then(res => {
+        console.log(res);
+        navigate(`/activities/${childId}`);
+      })
+      .catch(err => {
+        if (err.response) {
+          console.log(err.response.data);
+          console.log(err.response.status);
+          console.log(err.response.headers);
+        } else {
+          console.log(err.message);
+        }
+      });
   };
 
   return (
@@ -69,7 +98,7 @@ const AddActivity = () => {
           />
         </div>
 
-        <button type='submit' className="btn btn-lg btn-success mb-3">
+        <button type='submit' className="btn btn-success mb-3">
           Submit
         </button>
       </form>
@@ -77,4 +106,4 @@ const AddActivity = () => {
   );
 };
 
-export default AddActivity;
+export default UpdateActivity;
